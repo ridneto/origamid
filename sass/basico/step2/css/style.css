@@ -1,0 +1,218 @@
+/*
+$gutter: 20px;
+
+div {
+    $width: 200px;
+    width: $width - 2 * $gutter;
+    background: #333 + #777;
+}
+
+div{
+    $width: 300px;
+    width: $width;
+    @if $width > 400px{
+        height: $width * 1.5;
+    } @else{
+        height: $width;
+    }
+}
+*/
+/*
+%clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+div {
+    @extend %clearfix;
+}
+
+section{
+    @extend %clearfix;
+}
+
+ -- CUIDADO c/ o extend!
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+a.error{
+    display: block;
+}
+
+.button-error{
+    @extend .error;
+    padding: 20px;
+    width: 200px;
+} */
+/*
+$tema: oceano;
+$primary-color: black;
+$secondary-color: gray;
+
+@if $tema == oceano{
+    $primary-color: blue;
+    $secondary-color: orange;
+} @else if $tema == deserto{
+    $primary-color: yellow;
+    $secondary-color: purple;
+}
+
+p{
+    color: $primary-color;
+    background: $secondary-color;
+}
+
+@mixin type-01($size){
+    font-family: monospace;
+    @if $size == normal{
+        font-size: 1em;
+    }
+    @else if $size == large{
+        font-size: 1.25em;
+    }
+    @else if $size == x-large{
+        font-size: 1.5em;
+    }
+}
+
+p{
+    @include type-01(normal);
+}
+
+@mixin d($service){
+    @if $service == m{
+        @media(max-width: 300px){
+            @content;
+        }
+    }
+    @if $service == t{
+        @media(max-width: 600px){
+            @content;
+        }
+    }
+    @if $service == s{
+        @media(max-width: 900px){
+            @content;
+        }
+    }
+}
+
+div{
+    width: 100%;
+    @include d(t){
+        width: 80%;
+    }
+    @include d(m){
+        width: 60%;
+    }
+}
+*/
+/*
+@function em($pixels, $contexto: 16){
+    @return ($pixels / $contexto) * 1em;
+}
+
+@function grid($colunas, $total: 12){
+    @return round(($colunas / $total) * 100%);
+}
+
+div{
+    width: grid(4);
+}
+*/
+.modal {
+  box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal section {
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.modal h1 {
+  color: blue;
+  font-family: monospace;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 4em;
+  line-height: 1;
+}
+
+.modal h1::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: purple;
+}
+
+@media (max-width: 600px) {
+  .modal h1 {
+    color: pink;
+    font-size: 2em;
+  }
+}
+
+.modal p {
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+.modal p font {
+  size: 1.2em;
+  family: monospace;
+}
+
+@media (max-width: 600px) {
+  .modal p {
+    font-size: .8em;
+  }
+}
+
+.modal a {
+  display: block;
+  max-width: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background: blue;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+  font-size: em(36);
+}
+
+ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  background: blue;
+  color: white;
+}
+
+.active ul li a {
+  background: #6666ff;
+}
+
+ul li a:hover {
+  background: pink;
+}

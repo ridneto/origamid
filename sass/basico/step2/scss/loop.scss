@@ -1,0 +1,40 @@
+$container: 960px;
+$colunas: 16;
+$guter: 20;
+
+@for $i from 1 through 8{
+    .item-#{$i}{
+        width: $i * 100px;
+    }
+}
+
+@for $i from 1 through $colunas{
+    $width: $container / $colunas * $i - $guter;    
+    .grid-#{$i}{
+        width: $width;
+    }
+}
+
+@for $i from 1 through $colunas{
+    $width: 1 / $colunas * 100 + %;    
+    .porcento-#{$i}{
+        width: $width;
+    }
+}
+
+$i: 1;
+
+@while $i <= 2{
+    .type-#{$i}{
+        font-size: 16 * $i + px;
+    }
+    $i: $i + 1;
+}
+
+$redes: facebook twitter pinterest instagram;
+
+@each $item in $redes{
+    .rede-#{$item}{
+        background-image: url('img/#{$item}.png');
+    }
+}
